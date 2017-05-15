@@ -14,7 +14,7 @@ else:
 def get_sensor_readings():
 	sensors = []
 	if is_pi:
-		sensors.append(DS18B20.get_sensor_readings)
+		sensors= sensors + DS18B20.get_sensor_readings()
 	else: sensors = DummySensor.get_sensor_readings()
 	return sensors
 

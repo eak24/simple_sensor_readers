@@ -13,5 +13,5 @@ def get_sensor_value(sensor_id):
 def get_sensor_readings():
 	sensors = []
 	for sensor in W1ThermSensor.get_available_sensors():
-		sensors.append(SensorReadingClass(sensor.get_temperature, "Celsius", sensor.id))
+		sensors.append(sensor_manager.SensorReadingClass(sensor.get_temperature(), "Celsius", sensor.id))
 	return sensors
